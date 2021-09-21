@@ -20,12 +20,15 @@ jobs:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
+          
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
         
       - name: Build project
-        run: sudo ./gradlew build
+        run: ./gradlew build
         
       - name: Publish
-        run: sudo ./gradlew publish
+        run: ./gradlew publish
         env:
           NEXUS_USERNAME: ${{secrets.NEXUS_USERNAME}}
           NEXUS_PASSWORD: ${{secrets.NEXUS_PASSWORD}}
