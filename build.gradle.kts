@@ -25,6 +25,7 @@ subprojects {
     publishing {
         repositories {
             maven {
+                isAllowInsecureProtocol = true
                 credentials {
                     username = System.getenv("NEXUS_USERNAME")
                     password = System.getenv("NEXUS_PASSWORD")
