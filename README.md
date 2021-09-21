@@ -17,13 +17,13 @@ Arkane is devided into several parts, the main one being the architecture itself
 repositories {
     mavenCentral()
     maven { url = uri("https://papermc.io/repo/repository/maven-public/")}
-    maven {  url = uri("https://jitpack.io")}
+    maven {  url = uri("http://nexus.nobledev.org:8081/repository/maven-releases/")}
 }
 ```
 
 #### Dependency:
 ```kotlin
 dependencies {
-    implementation("com.github.NobleDevelopment:Arkane:1.0.2-B")
+    implementation("org.nobledev.arkane:architecture:1.0.3-B")
 }
 ```
