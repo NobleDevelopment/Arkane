@@ -13,14 +13,14 @@ allprojects {
 
     repositories {
         mavenCentral()
-        maven { url = uri("https://papermc.io/repo/repository/maven-public/")}
+        maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
     }
 
 }
 
 subprojects {
-    apply(plugin="kotlin")
-    apply(plugin="maven-publish")
+    apply(plugin = "kotlin")
+    apply(plugin = "maven-publish")
 
     publishing {
         repositories {
