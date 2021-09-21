@@ -1,8 +1,9 @@
+import org.jetbrains.kotlin.gradle.utils.COMPILE_ONLY
 dependencies {
     api(libs.koin.base)
     api(libs.koin.ext)
     api("org.jetbrains.kotlinx", "kotlinx-coroutines-core", libs.versions.kotlinV.get())
-    runtimeOnly(libs.paper)
+    COMPILE_ONLY(libs.paper)
 }
 
 publishing {
