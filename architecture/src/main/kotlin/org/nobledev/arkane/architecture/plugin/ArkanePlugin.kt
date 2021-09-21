@@ -41,7 +41,7 @@ abstract class ArkanePlugin : JavaPlugin() {
     }
 
 
-    fun <T : Feature> install(feature: Feature) {
+    fun install(feature: Feature) {
         features.add(feature)
         feature.onInstall(this)
     }
