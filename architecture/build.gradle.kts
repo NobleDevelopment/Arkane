@@ -5,14 +5,3 @@ dependencies {
     compileOnly(libs.paper)
 }
 
-publishing {
-    repositories {
-
-    }
-    publications {
-        create<MavenPublication>(project.name) {
-            artifactId = project.name.toLowerCase()
-            from(components["java"])
-        }
-    }
-}
