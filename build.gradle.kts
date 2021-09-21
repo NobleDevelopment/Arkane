@@ -9,7 +9,7 @@ plugins {
 
 allprojects {
     group = "org.nobledev.arkane"
-    version = "1.0.2-B"
+    version = "1.0.3-B"
 
     repositories {
         mavenCentral()
