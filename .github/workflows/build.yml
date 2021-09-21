@@ -22,10 +22,10 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
         
       - name: Build project
-        run: ./gradlew build
+        run: sudo ./gradlew build
         
       - name: Publish
-        run: ./gradlew publish
+        run: sudo ./gradlew publish
         env:
           NEXUS_USERNAME: ${{secrets.NEXUS_USERNAME}}
           NEXUS_PASSWORD: ${{secrets.NEXUS_PASSWORD}}
