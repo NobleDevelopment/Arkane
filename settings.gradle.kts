@@ -6,8 +6,7 @@ pluginManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
-    ":architecture",
-    ":Adapters:BukkitAdapter"
+    ":architecture"
 )
 enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
