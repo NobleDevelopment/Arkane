@@ -25,6 +25,10 @@ import java.util.logging.Logger
 import java.util.regex.Pattern
 import java.util.regex.Pattern.compile
 
+/**
+ * DO NOT USE THIS
+ */
+@Deprecated("You should not use this in your plugins!")
 class StubPlugin(private val name : String) : Plugin {
 
     private var naggable = false

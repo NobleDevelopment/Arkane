@@ -1,21 +1,19 @@
 package org.nobledev.arkane.architecture.plugin
 
-import org.bukkit.event.Event
-import org.bukkit.event.EventHandler
-import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.ModuleDeclaration
 import org.nobledev.arkane.architecture.feature.Feature
 
+/**
+ * Arkane plugin that automates Arkane's systems. All plugin classes should extend from this.
+ */
 abstract class ArkanePlugin : JavaPlugin() {
 
     private val modules = mutableListOf<Module>()
 
     private val features = mutableListOf<Feature>()
-
-
 
     override fun onEnable() {
         generateSelfModule()
@@ -25,10 +23,11 @@ abstract class ArkanePlugin : JavaPlugin() {
         startKoin {
             modules(modules)
         }
-
-
     }
 
+    /**
+     * Creates a module for dependency injection management
+     */
     fun createModule(decleration: ModuleDeclaration) {
         val module = Module(createAtStart = false, override = false)
         decleration(module)
@@ -36,16 +35,16 @@ abstract class ArkanePlugin : JavaPlugin() {
     }
 
     private fun generateSelfModule() = createModule {
-        single { this@ArkanePlugin.server.pluginManager }
-        single { this@ArkanePlugin.server.scheduler }
     }
 
-
+    /**
+     * Installs a feature to the plugin
+     *
+     * @param feature to install
+     */
     fun install(feature: Feature) {
         features.add(feature)
         feature.onInstall(this)
     }
-
-
 }
 

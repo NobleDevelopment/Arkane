@@ -5,6 +5,10 @@ import org.bukkit.configuration.ConfigurationSection
 
 
 typealias ConfigAdapter<T> = (key : String, config : ConfigurationSection) -> T
+
+/**
+ * Object providing commonly used configuration adapters
+ */
 object ConfigAdapters {
     val String : ConfigAdapter<String> = {key, conf ->
         conf.getString(key) ?: ""

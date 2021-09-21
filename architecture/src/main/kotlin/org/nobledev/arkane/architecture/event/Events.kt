@@ -40,6 +40,19 @@ private class ListenerList(val type : KClass<out BukkitEvent>) : TreeEvent<(Any)
     }
 }
 
+/**
+ * Used for adding an event listener to the private events system
+ *
+ * @param Type Generic used for typing
+ * @param type class object of the event to listen to
+ */
+@Suppress("UNCHECKED_CAST")
 fun <Type : BukkitEvent> listen(type: KClass<Type>) = LISTENER_LISTS.computeIfAbsent(type, ::ListenerList) as Event<(Type).() -> (Unit)>
 
+/**
+ * Used for adding an event listener to the private events system
+ *
+ * @param Type Generic used for typing
+ * @param type class object of the event to listen to
+ */
 inline fun <reified Type : BukkitEvent> listen(noinline listener : (Type).() -> (Unit)) = listen(Type::class)(listener)

@@ -4,6 +4,10 @@ import java.util.TreeMap
 
 typealias Event<Listener> = (Listener) -> (Unit)
 
+/**
+ * You should not be using this!
+ */
+@Deprecated("Do not use this!")
 open class TreeEvent<Listener> : Event<Listener> {
 
     var iterating = false
@@ -11,6 +15,7 @@ open class TreeEvent<Listener> : Event<Listener> {
     val listeners = TreeMap<Int, Listener>()
     val changes = ArrayList<Pair<Int, Listener?>>()
     var index = 0
+
 
     inline fun forEach(block : (Listener) -> (Unit)) {
         iterating = true
