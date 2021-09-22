@@ -26,6 +26,7 @@ object CommandAPIAdapter : Feature("CommandAPI Adapter", true) {
 
     override fun onEnable(plugin: ArkanePlugin) {
         if(isEnabled) return
+        runPipeline()
         CommandAPI.onEnable(commandStub)
     }
 }

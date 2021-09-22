@@ -35,7 +35,7 @@ abstract class Feature(val name: String, val concurrent: Boolean) {
     }
 
     /**
-     * Called when this feature is enabled.
+     * Called when this feature is enabled. If you override this, make sure to run the pipeline!
      *
      * @param plugin this feature is being installed to.
      */
