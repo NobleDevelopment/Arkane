@@ -1,6 +1,6 @@
 # Arkane ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/NobleDevelopment/Arkane?label=Latest&logo=GitHub&style=for-the-badge)
 A robust architecture for writing Spigot plugins.
-
+[Read the docs](http://nobledev.org/)
 ## Usage
 Arkane is devided into several parts, the main one being the architecture itself. Adapters are also provided for common features.
 
