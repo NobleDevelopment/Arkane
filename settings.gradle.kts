@@ -7,7 +7,8 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
     ":architecture",
-    ":Adapters:CommandAPIAdapter"
+    ":Adapters:CommandAPIAdapter",
+    ":Adapters:CitizensAdapter"
 )
 enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
