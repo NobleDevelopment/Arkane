@@ -25,11 +25,10 @@ subprojects {
     publishing {
         repositories {
             maven {
-                isAllowInsecureProtocol = true
                 credentials {
                     username = System.getenv("NEXUS_USERNAME")
                     password = System.getenv("NEXUS_PASSWORD")
-                    url = URI("http://nexus.nobledev.org:8081/repository/maven-releases/")
+                    url = URI("https://nexus.nobledev.org/repository/maven-releases/")
                 }
             }
         }

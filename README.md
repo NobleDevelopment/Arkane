@@ -17,7 +17,7 @@ Arkane is devided into several parts, the main one being the architecture itself
 repositories {
     mavenCentral()
     maven { url = uri("https://papermc.io/repo/repository/maven-public/")}
-    maven {  url = uri("http://nexus.nobledev.org:8081/repository/maven-releases/")}
+    maven {  url = uri("https://nexus.nobledev.org/repository/maven-releases/")}
 }
 ```
 
