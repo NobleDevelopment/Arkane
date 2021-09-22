@@ -6,7 +6,8 @@ pluginManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
-    ":architecture"
+    ":architecture",
+    ":Adapters:CommandAPIAdapter"
 )
 enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
