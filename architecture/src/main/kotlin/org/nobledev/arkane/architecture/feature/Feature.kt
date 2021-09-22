@@ -31,7 +31,6 @@ abstract class Feature(val name: String, val concurrent: Boolean) {
     open fun onInstall(plugin: ArkanePlugin) {
         if (operatingPlugin != null) throw IllegalStateException("Attempted to reinstall feature : $name")
         operatingPlugin = plugin
-        runPipeline()
         plugin.logger.info("Feature $name has been installed")
     }
 
@@ -40,7 +39,9 @@ abstract class Feature(val name: String, val concurrent: Boolean) {
      *
      * @param plugin this feature is being installed to.
      */
-    open fun onEnable(plugin : ArkanePlugin) {}
+    open fun onEnable(plugin : ArkanePlugin) {
+        runPipeline()
+    }
 
     /**
      * Executes the pipeline and attempts to override properties from the plugins configuration.
